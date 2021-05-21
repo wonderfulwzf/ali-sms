@@ -20,7 +20,7 @@ class SmsApplicationTests {
 
     @Test
     void contextLoads() throws Exception {
-            com.aliyun.dysmsapi20170525.Client client = createClient("LTAI5tE7KpiTY5VMM4ZvkGxj", "6gDBAuElu6RrKnDjpcrRDaLOy2x5rV");
+            com.aliyun.dysmsapi20170525.Client client = createClient("LTAI5tE******ZvkGxj", "6gDBAuElu6*****aLOy2x5rV");
             SendSmsRequest sendSmsRequest = new SendSmsRequest()
                     .setPhoneNumbers("15279620069")
                     //.setPhoneNumbers("18179951340")

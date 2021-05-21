@@ -5,13 +5,16 @@ import com.aliyun.dysmsapi20170525.models.SendSmsRequest;
 import com.aliyun.dysmsapi20170525.models.SendSmsResponse;
 import com.aliyun.teaopenapi.models.Config;
 import com.wzf.sms.service.SendSms;
+import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
+@Service
 public class SendSmsImpl implements SendSms {
+
     @Override
     public boolean send(String phoneNumbers, String signName, String templateCode, Map<String, Object> map) throws Exception {
-        com.aliyun.dysmsapi20170525.Client client = createClient("LTAI5tE7KpiTY5VMM4ZvkGxj", "6gDBAuElu6RrKnDjpcrRDaLOy2x5rV");
+        com.aliyun.dysmsapi20170525.Client client = createClient("LTAI5****VMM4ZvkGxj", "6gDBA****Oy2x5rV");
         SendSmsRequest sendSmsRequest = new SendSmsRequest()
                 .setPhoneNumbers(phoneNumbers)
                 //.setPhoneNumbers("18179951340")
@@ -20,7 +23,6 @@ public class SendSmsImpl implements SendSms {
                 .setTemplateParam(JSON.toJSONString(map));
         // 复制代码运行请自行打印 API 的返回值
         SendSmsResponse sendSmsResponse = client.sendSms(sendSmsRequest);
-        System.out.println(sendSmsResponse);
         return "OK".equals(sendSmsResponse.getBody().code);
     }
 
